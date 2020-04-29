@@ -12,3 +12,6 @@ close.addEventListener("click", function(event){
 
 new WOW().init();
 
+$(window).on("load",function(){
+    $(".loader-container").fadeOut(3000);
+});

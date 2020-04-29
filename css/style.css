@@ -1,6 +1,25 @@
 *{
     box-sizing: border-box;
     outline: none;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar{
+	width: 20px;
+}
+
+::-webkit-scrollbar-track{
+	background: #171D4A;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3) inset;
+}
+
+::-webkit-scrollbar-thumb{
+	background: linear-gradient(#fff6B7, #F6416C);
+	border-radius: 10px;
+	position: relative;
+	height: 20%;
 }
 
 a{
@@ -91,13 +110,14 @@ header{
 }
 
 #promo-bottom-2{
-    background: #FFF1B8 url(../img/map.png) no-repeat top 5px right 40px / 300px;
+    background: #FFF1B8 url(../img/map.png) no-repeat top 5px right 40px / 265px;
+    margin-bottom: 35px;
 }
 
 .promo-text{
     max-width: 538px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 24px;
     line-height: 28px;
     color: #302C34;
@@ -110,6 +130,68 @@ header{
     line-height: 46px;
     color: #302C34;
 }
+
+#promo-bottom-4{
+    background: #FFF1B8 url(../img/steak_PNG59.png) no-repeat top -50px right -10px / 450px;
+}
+
+.rec_img{
+    width: 160px;
+    margin-top: 40px;
+    box-sizing: border-box; 
+    height: 160px;
+}
+
+.rec p{
+    font-size: 30px;
+}
+
+.rec{
+    display: flex;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: .7s all ease-in-out;
+    color: white;
+}
+.rec div{
+    margin: auto;
+    flex: 30%;
+    margin: 5px;
+    transition: .7s all ease-in-out;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+
+.rec div:hover{
+    border-radius: 40px;
+    background: #FF3100;
+}
+
+.rec div:hover .kruh{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,89,121,1) 37%, rgba(0,212,255,1) 100%);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    transition: .7s all ease-in-out;
+}
+
+.kruh{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,89,121,1) 37%, rgba(0,212,255,1) 100%);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    transition: .7s all ease-in-out;
+}
+
+#why{
+    background: #FFF1B8 url(../img/home_sushi2_pic4.png) no-repeat top -50px right -20px / 450px;
+}
+
 
 .input-section{
     background: #FFFFFF;
@@ -154,6 +236,29 @@ header{
     transition: .7s ease-in-out all;
     flex-basis: 31%;
 }
+
+.card-2{
+    background: black;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: .7s ease-in-out all;
+    flex-basis: 31%;
+}
+
+.card-2{
+    color: white;
+}
+
+.card-2 .card-price-bold{
+    color: white;
+}
+
+.card-2 a{
+    color: black;
+}
+
 
 .card-image{
     border-top-right-radius: 7px;
@@ -209,6 +314,7 @@ header{
     margin-left: 30px;
 }
 
+
 .button-card-text{
     margin-right: 6px;
     vertical-align: middle;
@@ -251,7 +357,6 @@ header{
     border-radius: 2px;
     padding: 1px 8px;
 }
-
 
 
 .rating{
@@ -478,28 +583,250 @@ header{
     margin-top: 20px;
 }
 
+*{box-sizing: border-box; -webkit-box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font: 16px/1.3 sans-serif; }
+
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+http://stackoverflow.com/a/34696029/383904
+*/
+
+.CSSgal {
+	position: relative;
+	overflow: hidden;
+    height: 650px; /* Or set a fixed height */
+    margin-bottom: 50px;
+    object-fit: cover;
+    color:black;
+    margin-top: -30px;
+}
+
+
+/* SLIDER */
+
+.CSSgal .slider {
+	height: 100%;
+	white-space: nowrap;
+	font-size: 0;
+	transition: 0.8s;
+}
+
+/* SLIDES */
+
+.CSSgal .slider > * {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	height: 100%;
+	width: 100%;
+	background: none 50% no-repeat;
+	background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 100%;
+	height: 0;
+}
+
+.CSSgal .prevNext > div+div {
+	visibility: hidden; /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext a {
+	background: #fff;
+	position: absolute;
+	width:       60px;
+	height:      60px;
+	line-height: 60px; /* If you want to place numbers */
+	text-align: center;
+	opacity: 0.7;
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	left: 0;
+}
+.CSSgal .prevNext a:hover {
+	opacity: 1;
+}
+.CSSgal .prevNext a+a {
+	left: auto;
+	right: 0;
+}
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+.CSSgal .bullets > a {
+	display: inline-block;
+	width:       30px;
+	height:      30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+}
+.CSSgal .bullets > a+a {
+	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+.CSSgal .bullets > a:hover {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+/* ACTIVE */
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+/* More slides? Add here more rules */
+
+
+/* YOU'RE THE DESIGNER! 
+   ____________________
+   All above was mainly to get it working :)
+   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal{
+    color: black;
+    font-weight: bold;
+	text-align: center;
+}
+.CSSgal .slider h2 {
+	margin-top: 40vh;
+	font-weight: 200;
+	letter-spacing: -0.06em;
+	word-spacing: 0.2em;
+    font-size: 7em;
+    padding-top: -100px;
+    color: orange   ;
+    font-family: "Comic Sans MS", sans-serif;
+}
+.CSSgal a {
+	border-radius: 50%;
+	margin: 0 3px;
+	color: rgba(0,0,0,0.8);
+	text-decoration: none;
+}
+
 #kv{
     margin-top: -10px;
 }
 
-.photo {
-    display: inline-block; /* Строчно-блочный элемент */
-    position: relative; /* Относительное позиционирование */
-   }
-   .photo:hover::after {
-    content: attr(data-title); /* Выводим текст */
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0; right: 0; bottom: 5px; /* Положение подсказки */
-    z-index: 1; /* Отображаем подсказку поверх других элементов */
-    background: rgba(0,42,167,0.6); /* Полупрозрачный цвет фона */
-    color: #fff; /* Цвет текста */
-    text-align: center; /* Выравнивание текста по центру */
-    font-family: Arial, sans-serif; /* Гарнитура шрифта */
-    font-size: 90px; /* Размер текста подсказки */
-    padding: 5px 10px; /* Поля */
-    border: 1px solid #333; /* Параметры рамки */
-    font-family: "Impact", sans-serif;
-   }
+
+.slider {
+  position: relative;
+  width: 680px;
+  height: auto;
+  margin: 50px auto;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+  transform: scale(1.4);
+  margin-bottom: 130px;
+}
+
+.slider img{
+    object-fit: cover;
+}
+
+.slider input[name="switch"] {
+  display: none;
+}
+
+.switch {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  text-align: center;
+  width: 100%;
+}
+
+.switch label {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  margin: 0 3px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, .8);
+  border-radius: 50%;
+  border: 5px solid #2f363c;
+  background-color: #738290;
+}
+
+#btn1:checked~.switch label[for="btn1"] {
+  background-color: white;
+}
+
+#btn2:checked~.switch label[for="btn2"] {
+  background-color: white;
+}
+
+#btn3:checked~.switch label[for="btn3"] {
+  background-color: white;
+}
+
+.slider-inner {
+  overflow: hidden;
+}
+
+.slides {
+  width: 300%;
+  transition: all 0.5s;
+}
+
+.slides img {
+  width: 680px;
+  height: 340px;
+  float: left;
+}
+
+#btn1:checked~slider-inner slides {
+  transform: translate(0);
+}
+
+#btn2:checked~.slider-inner .slides {
+  transform: translate(-680px);
+}
+
+#btn3:checked~.slider-inner .slides {
+  transform: translate(-1360px);
+}
+
 
    .gallery{
     margin-bottom: 50px;
@@ -586,6 +913,52 @@ header{
     justify-content: center;
 }
 
+.new{
+    width: 40px;
+    height: 40px;
+    margin-right: -10px;
+}
+
+.loader-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background:black;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: padding-box;
+    z-index: 100;
+}
+
+.loader{
+    width: 120px;
+    height: 120px;
+    border: 11px solid;
+    color: #3498db;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: loader 3s linear infinite;
+}
+
+@keyframes loader{
+    25%{
+        color: #2ecc71;
+    }
+    50%{
+        color: #f1c40f;
+    }
+    75%{
+        color: #e74c3c;
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes animate{
     0%{
         transform: scaleX(0);
@@ -621,6 +994,214 @@ header{
     transform: rotate(270deg);
 }
 
+menu img{
+    width: 100px;
+    height: 100px;
+    line-height: 160px;
+    margin-left: 30px;
+}
+
+menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -29px;
+    margin-bottom: 10px;
+}
+
+menu div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+hr{
+    border: none;
+    width: 100%;
+    height: 3px;
+    background-color: grey;
+    margin-bottom: 25px;
+}
+
+menu div p{
+    margin-left: 28px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    transition: .7s all ease-in-out;
+    cursor: pointer;
+}
+
+menu div:hover p{
+    color: red;
+}
+
+
+.faq {
+    min-width: 500px;
+    margin: 20px auto;
+    font-size: 25px;
+    margin-bottom: 60px;
+}
+
+.faq-item {
+    margin-bottom: 5px;
+
+    border: 1px solid #b91125;
+}
+
+.faq-title {
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background .2s ease-out;
+}
+
+.faq-title:after {
+    content: "";
+    display: block;
+
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: #fff transparent transparent transparent;
+
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    transform: translateY(-50%);
+}
+
+.faq-title:hover {
+    background-color: #b91125;
+    color: white;
+}
+
+
+
+.faq-input {
+    width: 0;
+    height: 0;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    position: absolute;
+}
+
+.faq-input:checked ~ .faq-title {
+    background-color: #b91125;
+    color: white;
+}
+
+.faq-input:checked ~ .faq-title:after {
+    border-style: solid;
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent #fff transparent;
+}
+
+.faq-input:checked ~ .faq-text {
+    display: block;
+}
+
+.faq-text {
+    display: none;
+    padding: 10px 15px;
+    font-size: 23px;
+    color: #000;
+    font-weight: bold;
+    transition: background .2s ease-out;
+}
+
+menu p{
+	position: relative;
+	cursor: pointer;
+}
+
+
+
+
+menu p:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: #171D4A;
+	left:0;
+	bottom: 0;
+	transform: scale(0);
+	transition: 1s ease all;
+}
+
+menu p:hover::before{
+	transform: scale(1);
+}
+
+
+.pulse{
+	width: 90px;
+	height: 90px;
+	color: #fff;
+	text-align: center;
+	background: #5CC2E2;
+	border-radius: 50%;
+	position: fixed;
+	right: 30px;
+	bottom: 45px;
+	transition: 1.2s ease-in-out;
+}
+
+
+.pulse::before, .pulse::after{
+	content: '';
+	position: absolute;
+	border: 2px solid #29AEE3;
+	left: -15px;
+	right: -15px;
+	top: -15px;
+	bottom: -15px;
+	border-radius: 50%;
+	animation: pulse 1.8s linear infinite;
+	opacity: 0;
+}
+
+.pulse::after{
+	animation-delay: .5s;
+}
+
+.pulse:hover{
+	transform: rotate(360deg);
+}
+
+
+@keyframes pulse{
+	0%{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+
+	50%{
+		opacity: 1;
+	}
+
+	100%{
+		transform: scale(1.2);
+		opacity: 0;
+	}
+}
+
+.up{
+    width: 65px;
+    height: 65px;
+    margin-top: 12px;
+}
+
 @media (min-width:800px){
     .card:hover{
         transform: scale(1.05);
@@ -640,6 +1221,9 @@ header{
 @media (max-width:1366px){
     .container{
         max-width: 960px;
+    }
+    #promo-bottom-4{
+        background: #FFF1B8 url(../img/steak_PNG59.png) no-repeat top -50px right -10px / 350px;
     }
     .gallery img{
         max-width: 960px;
@@ -667,6 +1251,9 @@ header{
 @media (max-width:992px){
     .container{
         max-width: 750px;
+    }
+    #promo-bottom-4{
+        background-image:none;
     }
     .gallery img{
         max-width: 750px;
@@ -702,11 +1289,32 @@ header{
     .photo:hover::after{
         font-size: 60px;
     }
+    .info{
+        transform:scale(0.95);
+    }
+    .CSSgal h2{
+        display: none;
+    }
+    .CSSgal img{
+        object-fit: cover;
+        height: 500px;
+        width: 250px;
+    }
+    menu{
+        display: none;
+    }
+    #none-hr{
+        display: none;
+    }
 }
 
 @media (max-width:768px){
     .container{
         max-width: 560px;
+    }
+    .CSSgal{
+        height: 500px;
+        margin-top: -160px;
     }
     .gallery img{
         max-width: 560px;
@@ -736,6 +1344,12 @@ header{
         margin-top: 0;
     }
     #rating-2{
+        display: none;
+    }
+    #why{
+        background-image:none;
+    }
+    .pulse{
         display: none;
     }
 }
