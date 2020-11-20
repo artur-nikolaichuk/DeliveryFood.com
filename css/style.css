@@ -1480,6 +1480,9 @@ menu p:hover::before{
         font-size: 80px;
     }
     .accordion_wrap{
+        transform: scale(0.6);
+    }
+    .box{
         transform: scale(0.8);
     }
 }
